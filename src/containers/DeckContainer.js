@@ -13,7 +13,8 @@ class DeckContainer extends Component {
     render() {
         return (
             <div>
-                <cardsArray />
+                <cardsArray cards={this.props.cards} />
+
             </div>
         );
     }
