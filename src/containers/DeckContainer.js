@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { fetchCards } from '../actions/fetchCards'
+import cardsArray from '../components/cardsArray';
 
 class DeckContainer extends Component {
 
@@ -8,14 +10,10 @@ class DeckContainer extends Component {
 
     }
 
-
-
     render() {
         return (
             <div>
-
-
-
+                <cardsArray />
             </div>
         );
     }
@@ -23,6 +21,7 @@ class DeckContainer extends Component {
 
 const mapStateToProps = state => {
     return {
+        cards: state.cards
 
     }
 

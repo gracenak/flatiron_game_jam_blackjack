@@ -1,4 +1,5 @@
 import './App.css';
+import DeckContainer from './containers/DeckContainer';
 
 function App() {
   return (
@@ -7,8 +8,7 @@ function App() {
         <p>
           REEEEEEE Test
         </p>
-        <a>
-        </a>
+        <DeckContainer />
       </header>
     </div>
   );
