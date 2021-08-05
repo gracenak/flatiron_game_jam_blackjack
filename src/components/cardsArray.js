@@ -1,11 +1,20 @@
 import React from 'react';
 
-const cardsArray = (props) => {
-    props.cards.results.map(cards =>
+const CardsArray = (props) => {
+    debugger
+    return (
         <div>
-            <li>{cards.value}{cards.suit}</li>
+            {props.cards.results.map(cards =>
+                <div>
+                    <li key={card.code}>{card.value}</li>
+                </div>)}
         </div>
+        // props.cards.results.map(cards =>
+        //     <div>
+        //         <li>{cards.value}{cards.suit}</li>
+        //     </div>
+        // )
     )
 }
 
-export default cardsArray;
+export default CardsArray;
