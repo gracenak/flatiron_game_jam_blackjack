@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchCards } from '../actions/fetchCards'
 import HitButton from '../components/HitButton.js';
 import CardsArray from '../components/cardsArray';
+import StandButton from '../components/StandButton';
 
 
 class DeckContainer extends Component {
@@ -19,15 +20,11 @@ class DeckContainer extends Component {
         }
     }
 
-    renderHitButton = () => {
-        return <HitButton />
-    }
-
     render() {
         return (
             <div>
-                 {this.handleLoading()}
-                 {this.renderHitButton}
+                {this.handleLoading()}
+                <StandButton />
             </div>
         );
     }
