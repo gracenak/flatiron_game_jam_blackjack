@@ -7,6 +7,7 @@ import StandButton from '../components/StandButton';
 
 
 class DeckContainer extends Component {
+    
     componentDidMount() {
         this.props.fetchCards()
     }
