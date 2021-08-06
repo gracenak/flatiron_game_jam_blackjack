@@ -10,11 +10,17 @@ class DeckContainer extends Component {
 
     }
 
+    handleLoading = () => {
+        if (this.props.cards.length !== 0) {
+            console.log(this.props.cards.cards)
+            return <CardsArray cards={this.props.cards} />
+        }
+    }
+
     render() {
         return (
             <div>
-                <CardsArray cards={this.props.cards} />
-
+                 {this.handleLoading()}
             </div>
         );
     }
@@ -23,7 +29,6 @@ class DeckContainer extends Component {
 const mapStateToProps = state => {
     return {
         cards: state.cards
-
     }
 
 }
