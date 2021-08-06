@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { fetchAnotherCard } from '../actions/fetchAnotherCard'
 
  class HitButton extends React.Component {
     handleClick = () => { 
-        alert("Oi you hit the hit button")
+        this.props.fetchAnotherCard()
     }
 
     render(){
@@ -12,4 +14,11 @@ import React from 'react';
     }
  }
 
- export default HitButton
+ const mapStateToProps = state => {
+    return {
+        cards: state.cards
+    }
+
+}
+
+export default connect(mapStateToProps, { fetchAnotherCard })(HitButton);
