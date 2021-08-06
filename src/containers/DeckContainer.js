@@ -4,6 +4,8 @@ import { fetchCards } from '../actions/fetchCards'
 import HitButton from '../components/HitButton.js';
 import CardsArray from '../components/cardsArray';
 import StandButton from '../components/StandButton';
+import CurrentCardsTotal from '../components/CurrentCardsTotal';
+import { current } from 'immer';
 
 
 class DeckContainer extends Component {
@@ -23,6 +25,7 @@ class DeckContainer extends Component {
     render() {
         return (
             <div>
+                <CurrentCardsTotal value={this.props.cards} />
                 {this.handleLoading()}
                 <StandButton />
                 <HitButton />
