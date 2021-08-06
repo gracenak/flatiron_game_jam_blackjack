@@ -1,9 +1,13 @@
 import React from 'react';
 
  class HitButton extends React.Component {
+    handleClick = () => { 
+        alert("Oi you hit the hit button")
+    }
+
     render(){
         return(
-            <p> yo Im a button lmao </p>
+            <button onClick={() => this.handleClick()}> Hit </button>
         )
     }
  }

@@ -25,6 +25,7 @@ class DeckContainer extends Component {
             <div>
                 {this.handleLoading()}
                 <StandButton />
+                <HitButton />
             </div>
         );
     }
