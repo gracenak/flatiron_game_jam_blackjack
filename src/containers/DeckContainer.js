@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchCards } from '../actions/fetchCards'
 import CardsArray from '../components/cardsArray';
+import StandButton from '../components/StandButton';
 
 class DeckContainer extends Component {
 
@@ -20,7 +21,8 @@ class DeckContainer extends Component {
     render() {
         return (
             <div>
-                 {this.handleLoading()}
+                {this.handleLoading()}
+                <StandButton />
             </div>
         );
     }
