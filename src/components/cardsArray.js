@@ -1,12 +1,12 @@
 import React from 'react';
 
 const CardsArray = (props) => {
-    debugger
     return (
         <div>
-            {props.cards.results.map(cards =>
+             {props.cards.cards.map(cards =>
                 <div>
-                    <li key={card.code}>{card.value}</li>
+                    <li key={cards.code}>{cards.code} {cards.value} of {cards.suit}</li>
+                    <img src={cards.image}></img>
                 </div>)}
         </div>
         // props.cards.results.map(cards =>
