@@ -1,19 +1,16 @@
 import React from 'react';
+import '../Cards.css'
 
 const CardsArray = (props) => {
     return (
-        <div>
+        <div className="CardsMap">
             {props.cards.cards.map(cards =>
-                <div>
-                    <li key={cards.code}> {cards.value} of {cards.suit}</li>
+                <div className="Cards">
+                    <ul key={cards.code}> {cards.value} of {cards.suit}</ul>
                     <img src={cards.image} />
                 </div>)}
         </div>
-        // props.cards.results.map(cards =>
-        //     <div>
-        //         <li>{cards.value}{cards.suit}</li>
-        //     </div>
-        // )
+
     )
 }
 
