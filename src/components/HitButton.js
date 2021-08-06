@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchAnotherCard } from '../actions/fetchAnotherCard'
 
  class HitButton extends React.Component {
+
     handleClick = () => { 
         this.props.fetchAnotherCard()
     }

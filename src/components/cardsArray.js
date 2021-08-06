@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Cards.css'
 
+
 const CardsArray = (props) => {
     return (
         <div className="CardsMap">

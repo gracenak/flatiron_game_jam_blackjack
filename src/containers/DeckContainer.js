@@ -7,10 +7,8 @@ import StandButton from '../components/StandButton';
 
 
 class DeckContainer extends Component {
-
     componentDidMount() {
         this.props.fetchCards()
-
     }
 
     handleLoading = () => {
@@ -20,12 +18,13 @@ class DeckContainer extends Component {
         }
     }
 
+
     render() {
         return (
             <div>
                 {this.handleLoading()}
                 <StandButton />
-                <HitButton />
+                <HitButton/>
             </div>
         );
     }
