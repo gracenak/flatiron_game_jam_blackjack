@@ -6,7 +6,7 @@ const CardsArray = (props) => {
              {props.cards.cards.map(cards =>
                 <div>
                     <li key={cards.code}>{cards.code} {cards.value} of {cards.suit}</li>
-                    <img src={cards.image}></img>
+                    <img src={cards.image}/>
                 </div>)}
         </div>
         // props.cards.results.map(cards =>
