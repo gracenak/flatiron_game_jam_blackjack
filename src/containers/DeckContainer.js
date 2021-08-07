@@ -19,13 +19,12 @@ class DeckContainer extends Component {
         }
     }
 
-
     render() {
         return (
             <div>
                 {this.handleLoading()}
                 <StandButton />
-                <HitButton/>
+                <HitButton cards={this.props.cards}/>
             </div>
         );
     }
