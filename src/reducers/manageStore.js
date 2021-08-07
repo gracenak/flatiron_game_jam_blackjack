@@ -1,4 +1,4 @@
-export default function manageStore(state = { cards: [], , card: [], dealerCards: [] }, action) {
+export default function manageStore(state = { cards: [], card: [], dealerCards: [] }, action) {
 
 
     switch (action.type) {
