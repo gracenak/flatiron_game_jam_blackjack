@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchCards } from '../actions/fetchCards'
 import { fetchAnotherCard } from '../actions/fetchAnotherCard'
 import CardsArray from '../components/cardsArray';
+import AnotherCard from '../components/anotherCard';
 import StandButton from '../components/StandButton';
 
 
@@ -14,12 +15,20 @@ class DeckContainer extends Component {
 
     handleClick = () => { 
         this.props.fetchAnotherCard()
+        
     }
 
     handleLoading = () => {
         if (this.props.cards.length !== 0) {
             console.log(this.props.cards.cards)
             return <CardsArray cards={this.props.cards} />
+        }
+    }
+
+    handleHitCard = () => {
+        if (this.props.newCard.length !== 0) {
+            console.log(this.props.newCard.cards)
+            return <AnotherCard cards={this.props.newCard} />
         }
     }
 
@@ -33,6 +42,7 @@ class DeckContainer extends Component {
         return (
             <div>
                 {this.handleLoading()}
+                {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
             </div>
@@ -43,7 +53,7 @@ class DeckContainer extends Component {
 const mapStateToProps = state => {
     return {
         cards: state.cards,
-        newCard: state.cards
+        newCard: state.card
     }
 
 }
