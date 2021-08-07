@@ -26,13 +26,12 @@ class DeckContainer extends Component {
 
     handleLoadingDealer = () => {
         if (this.props.dealerCards.length !== 0) {
-            console.log(this.props.cards.cards)
+            console.log(this.props.dealerCards.cards)
             return <DealerCards cards={this.props.dealerCards} />
         }
     }
 
     render() {
-        debugger
         return (
             <div>
                 <CurrentCardsTotal value={this.props.cards} />
@@ -48,7 +47,7 @@ class DeckContainer extends Component {
 const mapStateToProps = state => {
     return {
         cards: state.cards,
-        dealerCards: state.cards
+        dealerCards: state.dealerCards
     }
 
 }
