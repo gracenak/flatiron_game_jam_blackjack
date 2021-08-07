@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchCards } from '../actions/fetchCards'
-import { fetchAnotherCard } from '../actions/fetchAnotherCard'
 import { fetchDealerCards } from '../actions/fetchDealerCards';
 import { fetchCards } from '../actions/fetchCards';
 import CardsArray from '../components/cardsArray';
