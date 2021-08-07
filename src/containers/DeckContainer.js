@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchCards } from '../actions/fetchCards'
 import { fetchAnotherCard } from '../actions/fetchAnotherCard'
 import { fetchDealerCards } from '../actions/fetchDealerCards';
+import { fetchCards } from '../actions/fetchCards';
 import CardsArray from '../components/cardsArray';
 import AnotherCard from '../components/anotherCard';
 import StandButton from '../components/StandButton';
@@ -12,13 +13,13 @@ import { current } from 'immer';
 
 
 class DeckContainer extends Component {
-    
+
     componentDidMount() {
         this.props.fetchCards()
         this.props.fetchDealerCards()
     }
 
-    handleClick = () => { 
+    handleClick = () => {
         this.props.fetchAnotherCard()
 
     }
@@ -37,8 +38,8 @@ class DeckContainer extends Component {
         }
     }
 
-    renderHitButton = () =>{ 
-        return(
+    renderHitButton = () => {
+        return (
             <button onClick={() => this.handleClick()}> Hit </button>
         )
     }
@@ -75,5 +76,5 @@ const mapStateToProps = state => {
 
 }
 
-export default connect(mapStateToProps, { fetchCards, fetchAnotherCard,  fetchDealerCards})(DeckContainer);
+export default connect(mapStateToProps, { fetchCards, fetchAnotherCard, fetchDealerCards })(DeckContainer);
 
