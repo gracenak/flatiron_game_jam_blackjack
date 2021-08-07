@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchDealerCards } from '../actions/fetchDealerCards';
 import { fetchCards } from '../actions/fetchCards';
+import { fetchAnotherCard } from '../actions/fetchAnotherCard';
 import CardsArray from '../components/cardsArray';
 import AnotherCard from '../components/anotherCard';
 import StandButton from '../components/StandButton';
