@@ -10,7 +10,6 @@ const DealerCards = (props) => {
                     <img src={dcards.image} />
                 </div>)}
         </div>
-
     )
 }
 

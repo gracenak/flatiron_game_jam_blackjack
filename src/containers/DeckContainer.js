@@ -31,9 +31,9 @@ class DeckContainer extends Component {
     }
 
     handleHitCard = () => {
-        if (this.props.newCard.length !== 0) {
-            console.log(this.props.newCard.cards)
-            return <AnotherCard cards={this.props.newCard} />
+        if (this.props.hitCard.length !== 0) {
+            console.log(this.props.hitCard.cards)
+            return <AnotherCard cards={this.props.hitCard} />
         }
     }
 
@@ -55,10 +55,12 @@ class DeckContainer extends Component {
         return (
             <div>
                 <CurrentCardsTotal value={this.props.cards} />
-                {this.handleLoading()}
-                {this.handleHitCard()}
+                Dealer
                 {this.handleLoadingDealer()}
-
+                Player
+                {this.handleLoading()}
+                Hit
+                {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
             </div>
@@ -69,7 +71,7 @@ class DeckContainer extends Component {
 const mapStateToProps = state => {
     return {
         cards: state.cards,
-        newCard: state.card,
+        hitCard: state.hitCard,
         dealerCards: state.dealerCards
     }
 
