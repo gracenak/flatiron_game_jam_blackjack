@@ -4,11 +4,7 @@ const StandButton = () => {
 
 
     return (
-        <div>
-
             <button>Stand</button>
-
-        </div>
     );
 }
 

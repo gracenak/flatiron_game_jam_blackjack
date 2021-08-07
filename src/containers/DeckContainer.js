@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchCards } from '../actions/fetchCards'
+import { fetchAnotherCard } from '../actions/fetchAnotherCard'
 import { fetchDealerCards } from '../actions/fetchDealerCards';
-import HitButton from '../components/HitButton.js';
 import CardsArray from '../components/cardsArray';
+import AnotherCard from '../components/anotherCard';
 import StandButton from '../components/StandButton';
 import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
@@ -11,10 +11,15 @@ import { current } from 'immer';
 
 
 class DeckContainer extends Component {
-
+    
     componentDidMount() {
         this.props.fetchCards()
         this.props.fetchDealerCards()
+    }
+
+    handleClick = () => { 
+        this.props.fetchAnotherCard()
+
     }
 
     handleLoading = () => {
@@ -23,6 +28,20 @@ class DeckContainer extends Component {
             return <CardsArray cards={this.props.cards} />
         }
     }
+
+    handleHitCard = () => {
+        if (this.props.newCard.length !== 0) {
+            console.log(this.props.newCard.cards)
+            return <AnotherCard cards={this.props.newCard} />
+        }
+    }
+
+    renderHitButton = () =>{ 
+        return(
+            <button onClick={() => this.handleClick()}> Hit </button>
+        )
+    }
+
 
     handleLoadingDealer = () => {
         if (this.props.dealerCards.length !== 0) {
@@ -36,9 +55,11 @@ class DeckContainer extends Component {
             <div>
                 <CurrentCardsTotal value={this.props.cards} />
                 {this.handleLoading()}
+                {this.handleHitCard()}
                 {this.handleLoadingDealer()}
+
                 <StandButton />
-                <HitButton />
+                {this.renderHitButton()}
             </div>
         );
     }
@@ -47,9 +68,11 @@ class DeckContainer extends Component {
 const mapStateToProps = state => {
     return {
         cards: state.cards,
+        newCard: state.card,
         dealerCards: state.dealerCards
     }
 
 }
 
-export default connect(mapStateToProps, { fetchCards, fetchDealerCards })(DeckContainer);
+export default connect(mapStateToProps, { fetchCards, fetchAnotherCard,  fetchDealerCards})(DeckContainer);
+

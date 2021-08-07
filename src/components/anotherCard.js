@@ -2,7 +2,7 @@ import React from 'react';
 import '../Cards.css'
 
 
-const CardsArray = (props) => {
+const AnotherCard = (props) => {
     return (
         <div className="CardsMap">
             {props.cards.cards.map(cards =>
@@ -15,4 +15,4 @@ const CardsArray = (props) => {
     )
 }
 
-export default CardsArray;
+export default AnotherCard;
