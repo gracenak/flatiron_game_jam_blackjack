@@ -1,11 +1,13 @@
 import React from 'react';
 
-const CurrentCardsTotal = () => {
+const CurrentCardsTotal = (props) => {
     return (
-        <div>
-
+        <div className={"TotalHandValue"}>
+            Hand Value:
         </div>
     );
 }
+
+
 
 export default CurrentCardsTotal;

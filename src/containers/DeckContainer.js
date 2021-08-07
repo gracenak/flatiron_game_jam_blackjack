@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchCards } from '../actions/fetchCards'
 import { fetchAnotherCard } from '../actions/fetchAnotherCard'
+import { fetchDealerCards } from '../actions/fetchDealerCards';
 import CardsArray from '../components/cardsArray';
 import AnotherCard from '../components/anotherCard';
 import StandButton from '../components/StandButton';
+import CurrentCardsTotal from '../components/CurrentCardsTotal';
+import DealerCards from '../components/DealerCards';
+import { current } from 'immer';
 
 
 class DeckContainer extends Component {
     
     componentDidMount() {
         this.props.fetchCards()
+        this.props.fetchDealerCards()
     }
 
     handleClick = () => { 
         this.props.fetchAnotherCard()
-        
+
     }
 
     handleLoading = () => {
@@ -38,11 +42,22 @@ class DeckContainer extends Component {
         )
     }
 
+
+    handleLoadingDealer = () => {
+        if (this.props.dealerCards.length !== 0) {
+            console.log(this.props.dealerCards.cards)
+            return <DealerCards cards={this.props.dealerCards} />
+        }
+    }
+
     render() {
         return (
             <div>
+                <CurrentCardsTotal value={this.props.cards} />
                 {this.handleLoading()}
                 {this.handleHitCard()}
+                {this.handleLoadingDealer()}
+
                 <StandButton />
                 {this.renderHitButton()}
             </div>
@@ -53,9 +68,11 @@ class DeckContainer extends Component {
 const mapStateToProps = state => {
     return {
         cards: state.cards,
-        newCard: state.card
+        newCard: state.card,
+        dealerCards: state.dealerCards
     }
 
 }
 
-export default connect(mapStateToProps, { fetchCards, fetchAnotherCard })(DeckContainer);
+export default connect(mapStateToProps, { fetchCards, fetchAnotherCard,  fetchDealerCards})(DeckContainer);
+
