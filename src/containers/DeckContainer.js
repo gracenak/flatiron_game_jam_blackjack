@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchCards } from '../actions/fetchCards'
-import HitButton from '../components/HitButton.js';
+import { fetchAnotherCard } from '../actions/fetchAnotherCard'
 import CardsArray from '../components/cardsArray';
 import StandButton from '../components/StandButton';
 
@@ -12,6 +12,10 @@ class DeckContainer extends Component {
         this.props.fetchCards()
     }
 
+    handleClick = () => { 
+        this.props.fetchAnotherCard()
+    }
+
     handleLoading = () => {
         if (this.props.cards.length !== 0) {
             console.log(this.props.cards.cards)
@@ -19,12 +23,18 @@ class DeckContainer extends Component {
         }
     }
 
+    renderHitButton = () =>{ 
+        return(
+            <button onClick={() => this.handleClick()}> Hit </button>
+        )
+    }
+
     render() {
         return (
             <div>
                 {this.handleLoading()}
                 <StandButton />
-                <HitButton cards={this.props.cards}/>
+                {this.renderHitButton()}
             </div>
         );
     }
@@ -32,9 +42,10 @@ class DeckContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        cards: state.cards
+        cards: state.cards,
+        newCard: state.cards
     }
 
 }
 
-export default connect(mapStateToProps, { fetchCards })(DeckContainer);
+export default connect(mapStateToProps, { fetchCards, fetchAnotherCard })(DeckContainer);
