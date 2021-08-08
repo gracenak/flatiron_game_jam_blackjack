@@ -28,8 +28,12 @@ class Home extends React.Component {
 
     renderGame = () =>{
         if (this.state.ready === true){
+            let name = this.state.name;
+            if (name === ""){
+                name = "Nameless Player"
+            }
             return (
-                <DeckContainer name={this.state.name} />
+                <DeckContainer name={name} />
             );
         }
     }
