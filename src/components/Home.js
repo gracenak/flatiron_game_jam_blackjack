@@ -19,6 +19,8 @@ class Home extends React.Component {
 
     handleSubmit = (event) =>{
         event.preventDefault();
+        let form = document.getElementById(`NameForm`);
+        form.remove()
         this.setState({
             ready: true
         });
@@ -34,7 +36,7 @@ class Home extends React.Component {
 
     renderForm = () => {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} id="NameForm">
                 <label>
                     Enter Your Name:
                     <input type="text" value={this.state.name} onChange={this.handleNameChange} />
