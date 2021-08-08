@@ -47,7 +47,7 @@ class DeckContainer extends Component {
     handleLoadingDealer = () => {
         if (this.props.dealerCards.length !== 0) {
             console.log(this.props.dealerCards.cards)
-            return <DealerCards cards={this.props.dealerCards} />
+            return <DealerCards dcards={this.props.dealerCards} />
         }
     }
 
@@ -59,7 +59,8 @@ class DeckContainer extends Component {
                 {this.handleLoadingDealer()}
                 {this.props.name}
                 {this.handleLoading()}
-                Hit
+                Dealer
+                {this.handleLoadingDealer()}
                 {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
