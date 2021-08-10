@@ -1,4 +1,7 @@
 .DealerCards {
-    image-orientation: top;
+
+    display:inline-block; 
+    width: 50%;
 
 }
+

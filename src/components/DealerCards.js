@@ -1,5 +1,5 @@
 import React from 'react';
-import '../DealerCardsMap.css'
+import '../DealerCards.css'
 
 const DealerCards = (props) => {
     debugger
