@@ -8,7 +8,7 @@ import AnotherCard from '../components/anotherCard';
 import StandButton from '../components/StandButton';
 import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
-import { current } from 'immer';
+//import { current } from 'immer';
 
 
 class DeckContainer extends Component {
@@ -59,8 +59,6 @@ class DeckContainer extends Component {
                 {this.handleLoadingDealer()}
                 {this.props.name}
                 {this.handleLoading()}
-                Dealer
-                {this.handleLoadingDealer()}
                 {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
