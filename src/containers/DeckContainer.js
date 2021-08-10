@@ -55,8 +55,9 @@ class DeckContainer extends Component {
         return (
             <div>
                 <CurrentCardsTotal value={this.props.cards} />
-
-                Player
+                Dealer
+                {this.handleLoadingDealer()}
+                {this.props.name}
                 {this.handleLoading()}
                 Dealer
                 {this.handleLoadingDealer()}
