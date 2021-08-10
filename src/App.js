@@ -1,5 +1,4 @@
 import './App.css';
-import DeckContainer from './containers/DeckContainer';
 import Home from './components/Home';
 
 function App() {

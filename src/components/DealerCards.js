@@ -2,7 +2,6 @@ import React from 'react';
 import '../DealerCardsMap.css'
 
 const DealerCards = (props) => {
-    debugger
     return (
         <div className="DealerCardsMap">
             {props.dcards.cards.map(dcards =>
