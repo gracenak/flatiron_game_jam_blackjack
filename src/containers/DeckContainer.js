@@ -6,7 +6,6 @@ import { fetchAnotherCard } from '../actions/fetchAnotherCard';
 import CardsArray from '../components/cardsArray';
 import HitCard from '../components/HitCard';
 import StandButton from '../components/StandButton';
-import RefreshButton from '../components/RefreshButton';
 import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
 //import { current } from 'immer';
@@ -37,12 +36,18 @@ class DeckContainer extends Component {
             return <HitCard cards={this.props.hitCard} />
         }
     }
-
     renderHitButton = () => {
         return (
             <button onClick={() => this.handleClick()}> Hit </button>
         )
     }
+
+    renderRefreshButton = () => {
+        return (
+            <button onClick={() => window.location.reload(false)}>Click to reload!</button>
+        )
+    }
+
 
 
     handleLoadingDealer = () => {
@@ -63,7 +68,7 @@ class DeckContainer extends Component {
                 {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
-                <RefreshButton />
+                {this.renderRefreshButton()}
             </div>
         );
     }
