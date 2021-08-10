@@ -8,7 +8,7 @@ const AnotherCard = (props) => {
             {props.cards.cards.map(cards =>
                 <div className="Cards">
                     <ul> {cards.value} of {cards.suit}</ul>
-                    <img src={cards.image} />
+                    <img src={cards.image} alt={cards.code} />
                 </div>)}
         </div>
 
