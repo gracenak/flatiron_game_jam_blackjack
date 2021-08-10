@@ -4,7 +4,7 @@ class RefreshButton extends React.Component{
 
     render() {
     return (
-        <button>Refresh</button>
+        <button>Refresh Button</button>
     )};
 }
 
