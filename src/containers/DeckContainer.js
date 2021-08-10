@@ -4,7 +4,7 @@ import { fetchDealerCards } from '../actions/fetchDealerCards';
 import { fetchCards } from '../actions/fetchCards';
 import { fetchAnotherCard } from '../actions/fetchAnotherCard';
 import CardsArray from '../components/cardsArray';
-import AnotherCard from '../components/anotherCard';
+import HitCard from '../components/HitCard';
 import StandButton from '../components/StandButton';
 import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
@@ -33,7 +33,7 @@ class DeckContainer extends Component {
     handleHitCard = () => {
         if (this.props.hitCard.length !== 0) {
             console.log(this.props.hitCard.cards)
-            return <AnotherCard cards={this.props.hitCard} />
+            return <HitCard cards={this.props.hitCard} />
         }
     }
 

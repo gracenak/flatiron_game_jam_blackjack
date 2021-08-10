@@ -2,7 +2,7 @@ import React from 'react';
 import '../Cards.css'
 
 
-const AnotherCard = (props) => {
+const HitCard = (props) => {
     return (
         <div className="CardsMap">
             {props.cards.cards.map(cards =>
@@ -15,4 +15,4 @@ const AnotherCard = (props) => {
     )
 }
 
-export default AnotherCard;
+export default HitCard;
