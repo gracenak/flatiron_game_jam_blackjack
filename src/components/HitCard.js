@@ -16,3 +16,4 @@ const HitCard = (props) => {
 }
 
 export default HitCard;
+
