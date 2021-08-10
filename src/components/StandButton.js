@@ -1,11 +1,15 @@
 import React from 'react';
 
-const StandButton = () => {
+class StandButton extends React.Component{
+    handleClick = () => {
+        //this.props.fetchStand()
+        alert("Yeah.... That's pretty much as close to 21 as I'll get")
+    }
 
-
+    render() {
     return (
-            <button>Stand</button>
-    );
+        <button onClick={() => this.handleClick()}>Stand</button>
+    )};
 }
 
 export default StandButton;
