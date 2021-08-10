@@ -7,7 +7,7 @@ const AnotherCard = (props) => {
         <div className="CardsMap">
             {props.cards.cards.map(cards =>
                 <div className="Cards">
-                    <ul> {cards.value} of {cards.suit}</ul>
+                    <ul key={cards.code}> {cards.value} of {cards.suit}</ul>
                     <img src={cards.image} alt={cards.code} />
                 </div>)}
         </div>
