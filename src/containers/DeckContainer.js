@@ -63,6 +63,7 @@ class DeckContainer extends Component {
                 {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
+                <RefreshButton />
             </div>
         );
     }
