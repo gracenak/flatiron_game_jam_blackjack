@@ -1,18 +1,34 @@
 import React from 'react';
+import { fetchStand } from '../actions/fetchStand';
+import { connect } from 'react-redux'
 
-class StandButton extends React.Component{
+class StandButton extends React.Component {
+
     handleClick = () => {
-        alert("Yeah.... That's pretty much as close to 21 as I'll get")
+        this.props.fetchStand()
         //this.props.fetchStand(number?)
     }
 
+
     render() {
-    return (
-        <button onClick={() => this.handleClick()}>Stand</button>
-    )};
+        return (
+            <button onClick={() => this.handleClick()}>Stand</button>
+        )
+    };
+
+
 }
 
-export default StandButton;
+const mapStateToProps = state => {
+
+    return {
+        stand: state.stand
+
+    }
+
+}
+
+export default connect(mapStateToProps, { fetchStand })(StandButton);
 
 //const mapDispatchToProps = dispatch => {
 //    return {
@@ -24,3 +40,4 @@ export default StandButton;
 //  };
 //  
 //  export default connect(null, mapDispatchToProps)(StandButton);
+
