@@ -36,12 +36,18 @@ class DeckContainer extends Component {
             return <HitCard cards={this.props.hitCard} />
         }
     }
-
     renderHitButton = () => {
         return (
             <button onClick={() => this.handleClick()}> Hit </button>
         )
     }
+
+    renderRefreshButton = () => {
+        return (
+            <button onClick={() => window.location.reload(false)}>Click to reload!</button>
+        )
+    }
+
 
 
     handleLoadingDealer = () => {
@@ -62,6 +68,7 @@ class DeckContainer extends Component {
                 {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
+                {this.renderRefreshButton()}
             </div>
         );
     }
