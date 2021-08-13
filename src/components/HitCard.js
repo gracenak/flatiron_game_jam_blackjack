@@ -2,17 +2,20 @@ import React from 'react';
 import '../Cards.css'
 
 
-const HitCard = (props) => {
+class HitCard extends React.Component {
+    //{for(let i=0; i < props.cards.length; i++){
+
+    //}}
+    render(){
     return (
         <div className="CardsMap">
-            {props.cards.cards.map(cards =>
+            {this.props.cards[0].cards.map(cards =>
                 <div className="Cards">
                     <ul key={cards.code}> {cards.value} of {cards.suit}</ul>
-                    <img src={cards.image} alt={cards.code} />
+                <img src={cards.image} alt={cards.code} />
                 </div>)}
-        </div>
-
-    )
+         </div>
+    )}
 }
 
 export default HitCard;
