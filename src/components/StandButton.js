@@ -6,6 +6,7 @@ class StandButton extends React.Component {
 
     handleClick = () => {
         this.props.fetchStand()
+
         //this.props.fetchStand(number?)
     }
 
