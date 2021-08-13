@@ -12,6 +12,9 @@ import DealerCards from '../components/DealerCards';
 
 
 class DeckContainer extends Component {
+    state = {
+        hitcards: []
+    }
 
     componentDidMount() {
         this.props.fetchCards()
@@ -20,7 +23,6 @@ class DeckContainer extends Component {
 
     handleClick = () => {
         this.props.fetchAnotherCard()
-
     }
 
     handleLoading = () => {
@@ -32,16 +34,24 @@ class DeckContainer extends Component {
 
     handleHitCard = () => {
         if (this.props.hitCard.length !== 0) {
+            let newCard = this.state.hitcards
             console.log(this.props.hitCard.cards)
-            return <HitCard cards={this.props.hitCard} />
+            newCard.push(this.props.hitCard)
+            return <HitCard cards={this.state.hitcards} />
         }
     }
-
     renderHitButton = () => {
         return (
             <button onClick={() => this.handleClick()}> Hit </button>
         )
     }
+
+    renderRefreshButton = () => {
+        return (
+            <button onClick={() => window.location.reload(false)}>Click to reload!</button>
+        )
+    }
+
 
 
     handleLoadingDealer = () => {
@@ -62,6 +72,7 @@ class DeckContainer extends Component {
                 {this.handleHitCard()}
                 <StandButton />
                 {this.renderHitButton()}
+                {this.renderRefreshButton()}
             </div>
         );
     }
