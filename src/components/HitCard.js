@@ -10,11 +10,9 @@ const HitCard = (props) => {
                 <div className="Cards">
                     {cards.cards.map(cards =>
                         <ul key={cards.code}> {cards.value} of {cards.suit}</ul>
-                        
-                        )}
+                    )}
                 </div>)}
          </div>
-
     )
 }
 
