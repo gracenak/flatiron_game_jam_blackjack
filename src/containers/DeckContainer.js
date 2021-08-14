@@ -25,16 +25,10 @@ class DeckContainer extends Component {
     handleClick = () => {
         this.props.fetchAnotherCard()
     }
-
-    handleQwerty(){
-        const entries = this.props.cards.cards
-        this.props.sendCardInfo(entries)
-    }
-
+    
     handleLoading = () => {
         if (this.props.cards.length !== 0) {
             console.log(this.props.cards.cards)
-            //this.handleQwerty()
             return <CardsArray cards={this.props.cards} />
         }
     }
@@ -93,15 +87,6 @@ const mapStateToProps = state => {
     }
 
 }
-
-const mapDispatchToProps = dispatch => {
-    return {
-        sendCardInfo: (entries) => {
-        dispatch(sendCardInfo(entries))
-      }
-    };
-  };
-  
 
 export default connect(mapStateToProps, { fetchCards, fetchAnotherCard, fetchDealerCards })(DeckContainer);
 
