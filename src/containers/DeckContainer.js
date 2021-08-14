@@ -8,12 +8,16 @@ import HitCard from '../components/HitCard';
 import StandButton from '../components/StandButton';
 import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
+import { sendCardInfo } from "../actions/sendCardInfo";
 //import { current } from 'immer';
 
 
 class DeckContainer extends Component {
     state = {
-        hitcards: []
+        cards: [],
+        hitcards: [],
+        dealerscard: [],
+        added: false
     }
 
     componentDidMount() {
@@ -52,21 +56,35 @@ class DeckContainer extends Component {
         )
     }
 
-
-
-    handleLoadingDealer = () => {
-        if (this.props.dealerCards.length !== 0) {
-            console.log(this.props.dealerCards.cards)
-            return <DealerCards dcards={this.props.dealerCards} />
+    renderCurrentCardTotal = () => {
+        let cardsInPlay = this.state.cards
+        if (this.props.cards.length !== 0 && this.props.dealerCards.length !== 0 && this.state.added === false) {
+            cardsInPlay.push(this.props.cards)
+            cardsInPlay.push(this.props.dealerCards)
+            this.setState({
+                added: true
+            })
         }
+        if (this.props.hitCard.length !== 0) {
+            cardsInPlay.push(this.props.hitCard)
+        }
+        return <CurrentCardsTotal cards={this.state.cards} />
     }
 
-
+    handleLoadingDealer = () => {
+        let dealersCards = this.state.dealerscard
+        if (this.props.dealerCards.length !== 0) {
+            console.log(this.props.dealerCards.cards)
+            dealersCards.push(this.props.dealerCards.cards[0])
+            return <DealerCards dcards={dealersCards[0]} />
+        }
+        
+    }
 
     render() {
         return (
             <div>
-                <CurrentCardsTotal value={this.props.cards} />
+                {this.renderCurrentCardTotal()}
                 Dealer
                 {this.handleLoadingDealer()}
                 {this.props.name}
