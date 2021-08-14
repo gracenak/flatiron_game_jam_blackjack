@@ -16,6 +16,7 @@ class DeckContainer extends Component {
     state = {
         cards: [],
         hitcards: [],
+        dealerscard: [],
         added: false
     }
 
@@ -71,20 +72,20 @@ class DeckContainer extends Component {
     }
 
     handleLoadingDealer = () => {
+        let dealersCards = this.state.dealerscard
         if (this.props.dealerCards.length !== 0) {
             console.log(this.props.dealerCards.cards)
-            return <DealerCards dcards={this.props.dealerCards} />
+            dealersCards.push(this.props.dealerCards.cards[0])
+            return <DealerCards dcards={dealersCards[0]} />
         }
+        
     }
-
-
 
     render() {
         return (
             <div>
                 {this.renderCurrentCardTotal()}
                 Dealer
-                REEEEEEE
                 {this.handleLoadingDealer()}
                 {this.props.name}
                 {this.handleLoading()}
