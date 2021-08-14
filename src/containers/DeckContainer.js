@@ -68,7 +68,6 @@ class DeckContainer extends Component {
             <div>
                 <CurrentCardsTotal value={this.props.cards} />
                 Dealer
-                REEEEEEE
                 {this.handleLoadingDealer()}
                 {this.props.name}
                 {this.handleLoading()}
