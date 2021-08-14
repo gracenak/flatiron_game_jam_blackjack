@@ -18,6 +18,7 @@ class CardsArray extends React.Component {
                 <div className="Cards">
                     <ul key={cards.code}> {cards.value} of {cards.suit}</ul>
                     <img src={cards.image} alt={cards.code}/>
+                    <h4>{cards.total}</h4>
                 </div>)}
         </div>
         )
