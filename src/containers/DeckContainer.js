@@ -15,7 +15,8 @@ import { sendCardInfo } from "../actions/sendCardInfo";
 class DeckContainer extends Component {
     state = {
         cards: [],
-        hitcards: []
+        hitcards: [],
+        added: false
     }
 
     componentDidMount() {
@@ -55,13 +56,18 @@ class DeckContainer extends Component {
     }
 
     renderCurrentCardTotal = () => {
-        if (this.props.cards.length !== 0 && this.props.dealerCards.length !== 0) {
-            let cardsInPlay = this.state.cards
+        let cardsInPlay = this.state.cards
+        if (this.props.cards.length !== 0 && this.props.dealerCards.length !== 0 && this.state.added === false) {
             cardsInPlay.push(this.props.cards)
             cardsInPlay.push(this.props.dealerCards)
-            //debugger
-            return <CurrentCardsTotal cards={this.state.cards} />
+            this.setState({
+                added: true
+            })
         }
+        if (this.props.hitCard.length !== 0) {
+            cardsInPlay.push(this.props.hitCard)
+        }
+        return <CurrentCardsTotal cards={this.state.cards} />
     }
 
     handleLoadingDealer = () => {
