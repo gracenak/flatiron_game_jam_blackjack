@@ -1,6 +1,6 @@
 export function sendCardInfo(entries) {
     return () => {
-      fetch(`http://localhost:3001/api/v1/users`, {
+      fetch(`http://localhost:3001/api/v1/players`, {
         method: "POST",
         headers: {
           Accept: "application/json",

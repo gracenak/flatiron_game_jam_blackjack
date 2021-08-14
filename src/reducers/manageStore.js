@@ -1,4 +1,4 @@
-export default function manageStore(state = { cards: [], hitCard: [], dealerCards: [], stand: [] }, action) {
+export default function manageStore(state = { cards: [], hitCard: [], dealerCards: [], stand: [], entries: [] }, action) {
 
 
     switch (action.type) {
@@ -10,6 +10,8 @@ export default function manageStore(state = { cards: [], hitCard: [], dealerCard
             return { ...state, dealerCards: action.payload }
         case 'FETCH_STAND':
             return { ...state, stand: action.payload }
+        case 'SEND_CARD_INFO':
+             return {...state, entries: action.payload }
         default:
             return state
 
