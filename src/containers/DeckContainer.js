@@ -14,6 +14,7 @@ import { sendCardInfo } from "../actions/sendCardInfo";
 
 class DeckContainer extends Component {
     state = {
+        cards: [],
         hitcards: []
     }
 
@@ -25,7 +26,7 @@ class DeckContainer extends Component {
     handleClick = () => {
         this.props.fetchAnotherCard()
     }
-    
+
     handleLoading = () => {
         if (this.props.cards.length !== 0) {
             console.log(this.props.cards.cards)
@@ -53,7 +54,15 @@ class DeckContainer extends Component {
         )
     }
 
-
+    renderCurrentCardTotal = () => {
+        if (this.props.cards.length !== 0 && this.props.dealerCards.length !== 0) {
+            let cardsInPlay = this.state.cards
+            cardsInPlay.push(this.props.cards)
+            cardsInPlay.push(this.props.dealerCards)
+            debugger
+            return <CurrentCardsTotal cards={this.state.cards} />
+        }
+    }
 
     handleLoadingDealer = () => {
         if (this.props.dealerCards.length !== 0) {
@@ -65,7 +74,7 @@ class DeckContainer extends Component {
     render() {
         return (
             <div>
-                <CurrentCardsTotal value={this.props.cards} />
+                {this.renderCurrentCardTotal()}
                 Dealer
                 {this.handleLoadingDealer()}
                 {this.props.name}
