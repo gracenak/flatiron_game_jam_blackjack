@@ -59,7 +59,7 @@ class DeckContainer extends Component {
             let cardsInPlay = this.state.cards
             cardsInPlay.push(this.props.cards)
             cardsInPlay.push(this.props.dealerCards)
-            debugger
+            //debugger
             return <CurrentCardsTotal cards={this.state.cards} />
         }
     }

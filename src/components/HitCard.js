@@ -3,7 +3,6 @@ import '../Cards.css'
 
 
 const HitCard = (props) => {
-    debugger
     return (
         <div className="CardsMap">
             {props.cards.map(cards =>
