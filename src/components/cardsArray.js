@@ -5,7 +5,7 @@ import '../Cards.css'
 
 
 class CardsArray extends React.Component {
-    handleClick(){
+    handleCardInfo(){
         const entries =  this.props.cards.cards
         this.props.sendCardInfo(entries)
     }
@@ -19,6 +19,7 @@ class CardsArray extends React.Component {
                     <ul key={cards.code}> {cards.value} of {cards.suit}</ul>
                     <img src={cards.image} alt={cards.code}/>
                 </div>)}
+
         </div>
         )
     }
