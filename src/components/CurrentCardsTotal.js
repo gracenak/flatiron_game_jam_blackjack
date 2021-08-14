@@ -6,7 +6,7 @@ import '../Cards.css'
 
 class CurrentCardsTotal  extends React.Component {
     handleCards(){
-        debugger
+
         const entries =  this.props.cards
         this.props.sendCardInfo(entries)
     }
@@ -14,7 +14,7 @@ class CurrentCardsTotal  extends React.Component {
 
     render(){
         return (<div>
-            <button onClick={() => this.handleCards()}>Stand</button>
+            <button onClick={() => this.handleCards()}>":^)"</button>
             </div>
         )
     }
