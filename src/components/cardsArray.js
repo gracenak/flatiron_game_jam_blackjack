@@ -5,7 +5,7 @@ import '../Cards.css'
 
 
 class CardsArray extends React.Component {
-    handleClick(){
+    handleCardInfo(){
         const entries =  this.props.cards.cards
         this.props.sendCardInfo(entries)
     }
@@ -20,6 +20,7 @@ class CardsArray extends React.Component {
                     <img src={cards.image} alt={cards.code}/>
                     <h4>{cards.total}</h4>
                 </div>)}
+
         </div>
         )
     }

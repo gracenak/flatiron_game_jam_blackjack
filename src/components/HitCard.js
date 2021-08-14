@@ -3,13 +3,12 @@ import '../Cards.css'
 
 
 const HitCard = (props) => {
-    debugger
     return (
         <div className="CardsMap">
             {props.cards.map(cards =>
                 <div className="Cards">
                     {cards.cards.map(cards =>
-                        <ul key={cards.code}> {cards.value} of {cards.suit}</ul>
+                        <ul key={cards.code}>  {cards.value} of {cards.suit} <br></br> <img src={cards.image} alt={cards.code}/></ul>
                     )}
                 </div>)}
          </div>

@@ -1,24 +1,24 @@
 import React from 'react';
 import { sendCardInfo } from "../actions/sendCardInfo";
 import { connect } from 'react-redux'
+import '../Cards.css'
 
-class CurrentCardsTotal extends React.Component {
-    
-    handleCards = () => {
-        debugger
+
+class CurrentCardsTotal  extends React.Component {
+    handleCards(){
+
+        const entries =  this.props.cards
+        this.props.sendCardInfo(entries)
     }
+
 
     render(){
-        return (
-            <div className={"TotalHandValue"}>
-                Hand Value:
-                {this.handleCards()}
+        return (<div>
+            <button onClick={() => this.handleCards()}>":^)"</button>
             </div>
-        );
+        )
     }
 }
-
-
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => {
     };
   };
   
-  export default connect(null, mapDispatchToProps)(CurrentCardsTotal);
+  export default connect(null, mapDispatchToProps)(CurrentCardsTotal );
