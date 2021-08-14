@@ -1,12 +1,12 @@
 import React from 'react';
-import '../Cards.css'
+import '../HitCards.css'
 
 
 const HitCard = (props) => {
     return (
-        <div className="CardsMap">
+        <div className="HitCardsMap">
             {props.cards.map(cards =>
-                <div className="Cards">
+                <div className="HitCards">
                     {cards.cards.map(cards =>
                         <ul key={cards.code}>  {cards.value} of {cards.suit} <br></br> <img src={cards.image} alt={cards.code}/></ul>
                     )}
