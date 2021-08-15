@@ -2,11 +2,47 @@ import React from 'react';
 // import { connect } from 'react-redux'
 
 
-const StandButton = () => {
+const StandButton = (props) => {
 
     let HandleClick = () => {
-        alert("No one wins yet");
+        if (playerCardsTotal() > dealerCardsTotal()) {
+            alert("Player Wins")
+        } else {
+            alert("Player Loses")
+        }
+
+
+        // alert("No one wins yet");
     }
+
+    let dealerCardsTotal = () => {
+        let totalHand = []
+
+        props.dealerCards.cards.map(dcards =>
+            totalHand.push(parseInt(dcards.value, 10))
+        )
+        alert(totalHand.reduce((a, b) => a + b, 0))
+
+    }
+
+    let playerCardsTotal = () => {
+
+        let totalHand = []
+
+        props.cards.cards.map(cards =>
+            totalHand.push(parseInt(cards.value, 10))
+        )
+        alert(totalHand.reduce((a, b) => a + b, 0))
+
+    }
+
+
+
+    // let playerFinalHand = () => {
+
+    // }
+
+
 
     return (
         <button onClick={() => HandleClick()}>Stand</button>

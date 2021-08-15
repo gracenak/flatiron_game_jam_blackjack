@@ -80,7 +80,7 @@ class DeckContainer extends Component {
             dealersCards.push(this.props.dealerCards.cards[0])
             return <DealerCards dcards={dealersCards[0]} />
         }
-        
+
     }
 
     render() {
@@ -93,8 +93,11 @@ class DeckContainer extends Component {
                 {this.props.name}
                 {this.handleLoading()}
                 {this.handleHitCard()}
-                <Hand />
-                <StandButton />
+                <StandButton
+                    cards={this.props.cards}
+                    dealerCards={this.props.dealerCards}
+                    hit={this.props.hitCard}
+                />
                 {this.renderHitButton()}
                 {this.renderRefreshButton()}
             </div>
