@@ -44,9 +44,14 @@ div.Cards h4 {
 div.HitCardsMap {
   background-color: transparent;
 
+  width: 100%;
+  height: 100%;
+
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
+
+  display:inline-block; 
 }
 
 div.card-inner {
@@ -75,6 +80,8 @@ div.card-front {
 div.card-back {
   background-color: #bbb;
   color: black;
+
+  display:inline-block; 
 }
 
 div.card-front, .card-back {
