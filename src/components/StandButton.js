@@ -2,11 +2,25 @@ import React from 'react';
 // import { connect } from 'react-redux'
 
 
-const StandButton = () => {
+const StandButton = ({ cards, dealersCards }) => {
 
     let HandleClick = () => {
+
+
         alert("No one wins yet");
     }
+
+    let dealerCardsTotal = (dealerCards) => {
+
+
+    }
+
+    let playerCardsTotal = (cards) => {
+
+
+    }
+
+
 
     return (
         <button onClick={() => HandleClick()}>Stand</button>
