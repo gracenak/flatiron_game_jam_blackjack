@@ -10,13 +10,14 @@ import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
 import { sendCardInfo } from "../actions/sendCardInfo";
 //import { current } from 'immer';
-import Player from '../components/Player';
+import Hand from '../components/Hand';
 
 
 class DeckContainer extends Component {
     state = {
         cards: [],
         hitcards: [],
+        dealerscard: [],
         added: false
     }
 
@@ -41,7 +42,8 @@ class DeckContainer extends Component {
             let newCard = this.state.hitcards
             console.log(this.props.hitCard.cards)
             newCard.push(this.props.hitCard)
-            return <HitCard cards={this.state.hitcards} />
+            return <HitCard cards={this.state.hitcards}
+                            handValue = {this.state.hitcards.value} />
         }
     }
     renderHitButton = () => {
@@ -72,25 +74,26 @@ class DeckContainer extends Component {
     }
 
     handleLoadingDealer = () => {
+        let dealersCards = this.state.dealerscard
         if (this.props.dealerCards.length !== 0) {
             console.log(this.props.dealerCards.cards)
-            return <DealerCards dcards={this.props.dealerCards} />
+            dealersCards.push(this.props.dealerCards.cards[0])
+            return <DealerCards dcards={dealersCards[0]} />
         }
+        
     }
-
-
 
     render() {
         return (
             <div>
+                <h4>{this.state.hitcards}</h4>
                 {this.renderCurrentCardTotal()}
                 Dealer
-                REEEEEEE
                 {this.handleLoadingDealer()}
                 {this.props.name}
                 {this.handleLoading()}
                 {this.handleHitCard()}
-                <Player />
+                <Hand />
                 <StandButton />
                 {this.renderHitButton()}
                 {this.renderRefreshButton()}
