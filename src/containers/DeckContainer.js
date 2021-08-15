@@ -10,7 +10,6 @@ import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
 import { sendCardInfo } from "../actions/sendCardInfo";
 //import { current } from 'immer';
-import Hand from '../components/Hand';
 
 
 class DeckContainer extends Component {
@@ -43,7 +42,7 @@ class DeckContainer extends Component {
             console.log(this.props.hitCard.cards)
             newCard.push(this.props.hitCard)
             return <HitCard cards={this.state.hitcards}
-                            handValue = {this.state.hitcards.value} />
+                             />
         }
     }
     renderHitButton = () => {
