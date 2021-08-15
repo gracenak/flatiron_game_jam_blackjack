@@ -4,6 +4,7 @@ const StandButton = (props) => {
 
     let HandleClick = () => {
         alert("Player Has " + playerCardsTotal() + "!")
+        alert("Dealer was hiding a " + hiddenCard())
         alert("Dealer Has " + dealerCardsTotal() + "!")
         if (playerCardsTotal() > 21) {
             alert("Player Has Busted!")
@@ -53,7 +54,7 @@ const StandButton = (props) => {
             if (finalTotal[i] === "KING" || finalTotal[i] === "QUEEN" || finalTotal[i] === "JACK"){
                 total.push(10)
             } else if (finalTotal[i] === "ACE"){
-                total.push(10)
+                total.push(11)
             } else {
                 total.push(parseInt(finalTotal[i], 10))
             }
@@ -62,6 +63,14 @@ const StandButton = (props) => {
             finalScore += total[i]
         }
         return finalScore
+     }
+
+     let hiddenCard = () => {
+        let dealerHand = []
+        props.dealerCards.cards.map(dcards =>
+            dealerHand.push(dcards.value)
+        )
+        return dealerHand[1]
      }
 
     return (
