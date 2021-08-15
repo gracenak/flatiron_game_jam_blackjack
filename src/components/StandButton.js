@@ -1,20 +1,19 @@
 import React from 'react';
-// import { connect } from 'react-redux'
-
 
 const StandButton = (props) => {
 
-
-
     let HandleClick = () => {
-        if (playerCardsTotal() > dealerCardsTotal()) {
-            alert("Player Wins")
+        alert("Player Has " + playerCardsTotal() + "!")
+        alert("Dealer Has " + dealerCardsTotal() + "!")
+        if (playerCardsTotal() > 21) {
+            alert("Player Has Busted!")
+        } else if (playerCardsTotal() > dealerCardsTotal()) {
+            alert("Player Wins!")
+        } else if (playerCardsTotal() === dealerCardsTotal()) {
+            alert("Player Pushes!")
         } else {
-            alert("Player Loses")
+            alert("Player Loses!")
         }
-
-
-        // alert("No one wins yet");
     }
 
     let dealerCardsTotal = () => {
@@ -27,69 +26,50 @@ const StandButton = (props) => {
             if (dealerHand[i] === "KING" || dealerHand[i] === "QUEEN" || dealerHand[i] === "JACK"){
                 total.push(10)
             } else if (dealerHand[i] === "ACE"){
-                total.push(10)
+                total.push(11)
             } else {
                 total.push(parseInt(dealerHand[i], 10))
             }
         }
         let Dealertotal = total[0] + total[1] 
-        console.log(Dealertotal)
         return Dealertotal
     }
 
-    const playerCardsTotal = () => {
-
-        let playerHand = []
+     let playerCardsTotal = () => {
+        let finalTotal = []
         let total = []
+        let finalScore = 0
         props.cards.cards.map(cards =>
-            playerHand.push(cards.value)
+            finalTotal.push(cards.value)
         )
-        for (let i = 0; playerHand.length > i; i++){
-            if (playerHand[i] === "KING" || playerHand[i] === "QUEEN" || playerHand[i] === "JACK"){
+        if (props.hit.length !== 0){
+            props.hit.map(cards =>
+                {cards.cards.map(cards =>
+                    finalTotal.push(cards.value)
+                )}
+            )
+        }
+        for (let i = 0; finalTotal.length > i; i++){
+            if (finalTotal[i] === "KING" || finalTotal[i] === "QUEEN" || finalTotal[i] === "JACK"){
                 total.push(10)
-            } else if (playerHand[i] === "ACE"){
+            } else if (finalTotal[i] === "ACE"){
                 total.push(10)
             } else {
-                total.push(parseInt(playerHand[i], 10))
+                total.push(parseInt(finalTotal[i], 10))
             }
         }
-        let playerTotal = total[0] + total[1] 
-        console.log(playerTotal)
-        return playerTotal
-
-    }
-
-    // let hitCardsTotal = () => {
-
-    //     let totalHand = []
-
-    //     props.hit.cards.map(hcards =>
-    //         totalHand.push(parseInt(hcards.value, 10))
-    //     )
-    //     alert(totalHand.reduce((a, b) => a + b, 0))
-
-    // }
-
-    // let playerFinalTotal = playerCardsTotal() + hitCardsTotal()
+        for (let i = 0; total.length > i; i++){
+            finalScore += total[i]
+        }
+        return finalScore
+     }
 
     return (
         <div>
         <button onClick={() => HandleClick()}>Stand</button>
-        <p>{playerCardsTotal}</p>
         </div>
     )
 };
 
 
 export default StandButton;
-
-// const mapStateToProps = state => {
-
-//     return {
-//         stand: state.stand
-
-//     }
-
-// }
-
-// export default connect(mapStateToProps, { fetchStand })(StandButton);

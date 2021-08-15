@@ -93,7 +93,7 @@ class DeckContainer extends Component {
                 <StandButton
                     cards={this.props.cards}
                     dealerCards={this.props.dealerCards}
-                    hit={this.props.hitCard}
+                    hit={this.state.hitcards}
                 />
                 {this.renderHitButton()}
                 {this.renderRefreshButton()}
