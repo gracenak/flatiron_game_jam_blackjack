@@ -10,6 +10,7 @@ import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
 import { sendCardInfo } from "../actions/sendCardInfo";
 //import { current } from 'immer';
+import Player from '../components/Player';
 
 
 class DeckContainer extends Component {
@@ -89,6 +90,7 @@ class DeckContainer extends Component {
                 {this.props.name}
                 {this.handleLoading()}
                 {this.handleHitCard()}
+                <Player />
                 <StandButton />
                 {this.renderHitButton()}
                 {this.renderRefreshButton()}
