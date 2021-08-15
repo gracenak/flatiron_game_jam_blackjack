@@ -1,26 +1,19 @@
 import React from 'react';
-// import { connect } from 'react-redux'
-
 
 const StandButton = (props) => {
 
-
-
     let HandleClick = () => {
-        alert("Player Has " + hitCardsTotal() + "!")
+        alert("Player Has " + playerCardsTotal() + "!")
         alert("Dealer Has " + dealerCardsTotal() + "!")
-        if (hitCardsTotal() > 21) {
+        if (playerCardsTotal() > 21) {
             alert("Player Has Busted!")
-        } else if (hitCardsTotal() > dealerCardsTotal()) {
+        } else if (playerCardsTotal() > dealerCardsTotal()) {
             alert("Player Wins!")
-        } else if (hitCardsTotal() === dealerCardsTotal()) {
+        } else if (playerCardsTotal() === dealerCardsTotal()) {
             alert("Player Pushes!")
         } else {
             alert("Player Loses!")
         }
-
-
-        // alert("No one wins yet");
     }
 
     let dealerCardsTotal = () => {
@@ -42,7 +35,7 @@ const StandButton = (props) => {
         return Dealertotal
     }
 
-     let hitCardsTotal = () => {
+     let playerCardsTotal = () => {
         let finalTotal = []
         let total = []
         let finalScore = 0
@@ -65,15 +58,11 @@ const StandButton = (props) => {
                 total.push(parseInt(finalTotal[i], 10))
             }
         }
-        
         for (let i = 0; total.length > i; i++){
             finalScore += total[i]
         }
         return finalScore
-
      }
-
-    // let playerFinalTotal = playerCardsTotal() + hitCardsTotal()
 
     return (
         <div>
@@ -84,14 +73,3 @@ const StandButton = (props) => {
 
 
 export default StandButton;
-
-// const mapStateToProps = state => {
-
-//     return {
-//         stand: state.stand
-
-//     }
-
-// }
-
-// export default connect(mapStateToProps, { fetchStand })(StandButton);
