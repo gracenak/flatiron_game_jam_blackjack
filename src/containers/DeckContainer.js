@@ -41,8 +41,7 @@ class DeckContainer extends Component {
             let newCard = this.state.hitcards
             console.log(this.props.hitCard.cards)
             newCard.push(this.props.hitCard)
-            return <HitCard cards={this.state.hitcards}
-                             />
+            return <HitCard cards={this.state.hitcards} />
         }
     }
     renderHitButton = () => {
@@ -85,7 +84,6 @@ class DeckContainer extends Component {
     render() {
         return (
             <div>
-                <h4>{this.state.hitcards}</h4>
                 {this.renderCurrentCardTotal()}
                 Dealer
                 {this.handleLoadingDealer()}
