@@ -37,7 +37,7 @@ const StandButton = (props) => {
         return Dealertotal
     }
 
-    let playerCardsTotal = () => {
+    const playerCardsTotal = () => {
 
         let playerHand = []
         let total = []
@@ -73,7 +73,10 @@ const StandButton = (props) => {
     // let playerFinalTotal = playerCardsTotal() + hitCardsTotal()
 
     return (
+        <div>
         <button onClick={() => HandleClick()}>Stand</button>
+        <p>{playerCardsTotal}</p>
+        </div>
     )
 };
 
