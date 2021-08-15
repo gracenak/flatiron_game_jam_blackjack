@@ -23,8 +23,6 @@ const StandButton = (props) => {
         )
         alert(totalHand.reduce((a, b) => a + b, 0))
 
-
-
     }
 
     let playerCardsTotal = () => {
