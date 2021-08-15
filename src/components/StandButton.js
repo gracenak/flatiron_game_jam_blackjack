@@ -4,6 +4,8 @@ import React from 'react';
 
 const StandButton = (props) => {
 
+
+
     let HandleClick = () => {
         if (playerCardsTotal() > dealerCardsTotal()) {
             alert("Player Wins")
@@ -34,16 +36,20 @@ const StandButton = (props) => {
         )
         alert(totalHand.reduce((a, b) => a + b, 0))
 
-
     }
 
+    // let hitCardsTotal = () => {
 
+    //     let totalHand = []
 
-    // let playerFinalHand = () => {
+    //     props.hit.cards.map(hcards =>
+    //         totalHand.push(parseInt(hcards.value, 10))
+    //     )
+    //     alert(totalHand.reduce((a, b) => a + b, 0))
 
     // }
 
-
+    // let playerFinalTotal = playerCardsTotal() + hitCardsTotal()
 
     return (
         <button onClick={() => HandleClick()}>Stand</button>
