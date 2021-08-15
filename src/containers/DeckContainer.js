@@ -85,9 +85,9 @@ class DeckContainer extends Component {
         return (
             <div>
                 {this.renderCurrentCardTotal()}
-                Dealer
+                <h4>Dealer vs. {this.props.name}</h4>
                 {this.handleLoadingDealer()}
-                {this.props.name}
+                
                 {this.handleLoading()}
                 {this.handleHitCard()}
                 <StandButton
