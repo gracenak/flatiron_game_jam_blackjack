@@ -1,4 +1,5 @@
 ## BlackJack
+![Demo Gif](https://github.com/gracenak/flatiron_game_jam_blackjack/blob/jkvcalc/src/components/images/blackjack.gif?raw=true)
 
 The Stakes Are High In This Casino Card Game
 
