@@ -2,6 +2,8 @@
     /* position: relative;
     margin-top: auto; */
 
+    position: relative;
+
     display:inline-block; 
     width: 20%;
     
@@ -10,6 +12,8 @@
 
 div.HitCardsMap img {
     display: inline;
+    padding: 20px;
+    padding-top: 20px;
 }
 
 
