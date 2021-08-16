@@ -22,7 +22,7 @@ const DealerCards = (props) => {
         <div className="HitCardsMap" >
 
             <p key={props.dcards.code}>{props.dcards.value} of {props.dcards.suit}</p>
-            <ul key={props.dcards.code}><img src={props.dcards.image} alt={props.dcards.code}/><img src={cardDown} alt="card-down" width="226px" height="314px" /></ul>
+            <ul key={props.dcards.code}><img src={cardDown} alt="card-down" width="226px" height="314px" /><img src={props.dcards.image} alt={props.dcards.code}/></ul>
         </div>
 
 
