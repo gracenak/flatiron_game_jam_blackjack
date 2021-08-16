@@ -67,7 +67,7 @@ const StandButton = (props) => {
 
      let hiddenCard = () => {
         let dealerHand = []
-        props.dealerCards.cards.map(dcards =>
+        props.dealerCards.cards && props.dealerCards.cards.map(dcards =>
             dealerHand.push(dcards.value)
         )
         return dealerHand[1]
