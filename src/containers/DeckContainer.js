@@ -83,10 +83,12 @@ class DeckContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className="blackjack-container">
                 {this.renderCurrentCardTotal()}
                 <h4>Dealer vs. {this.props.name}</h4>
+
                 {this.handleLoadingDealer()}
+
                 
                 {this.handleLoading()}
                 {this.handleHitCard()}

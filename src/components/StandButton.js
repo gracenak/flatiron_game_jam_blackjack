@@ -40,7 +40,7 @@ const StandButton = (props) => {
         let finalTotal = []
         let total = []
         let finalScore = 0
-        props.cards.cards.map(cards =>
+        props.cards.cards && props.cards.cards.map(cards =>
             finalTotal.push(cards.value)
         )
         if (props.hit.length !== 0){

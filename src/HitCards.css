@@ -1,4 +1,6 @@
 .HitCards {
+    position: relative;
+    margin-top: auto;
 
     display:inline-block; 
     width: 20%;
