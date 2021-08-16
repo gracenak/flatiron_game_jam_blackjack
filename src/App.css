@@ -110,10 +110,13 @@ div.card-front, .card-back {
 }
 
 .HitCardsMap {
-display:inline;
+display:inline-block;
 }
 
-.blackjack-container {
-  display: inline-block;
+div.blackjack-container h3 {
+  color:yellow
 }
+
+
+
 

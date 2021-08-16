@@ -94,9 +94,10 @@ class DeckContainer extends Component {
                 {this.renderCurrentCardTotal()}
                 <h4>Dealer vs. {this.props.name}</h4>
 
+                <h3>Dealer Cards:</h3>
                 {this.handleLoadingDealer()}
 
-                
+                <h3>Player Cards:</h3>
                 {this.handleLoading()}
                 {this.handleHitCard()}
                 <StandButton
