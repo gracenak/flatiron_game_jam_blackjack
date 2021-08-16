@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+## BlackJack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Stakes Are High In This Casino Card Game
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Add this to a new folder:
+1. Fork & Clone
+2. run npm install, then npm start within the folder
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage 
+When the app begins, you will get a prompt where you can enter your name. Once you submit that you will enter the app proper
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+When the app beings, you will see your cards and a dealer card. Your options are to Stand, Hit, and Reload Game.
 
-### `yarn test`
+Stand: Clicking this button will end the game and assess the scores of both the player and dealer. Depending on the outcome, an alert telling the player of the result will display
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Hit: If you think that your cards will not beat the dealer, you can hit this card to give you more cards. Be careful! If your score goes over 21, you will lose.
 
-### `yarn build`
+Reload: This button will reload the app. This will take you all the way back to where you have to reenter your name again
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Rules of Blackjack:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The goal of blackjack is to beat the dealer's hand without going over 21. Face cards are worth 10. Aces are worth 11. Each player starts with two cards, one of the dealer's cards is hidden until the end. To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn. If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `yarn eject`
+Bug reports and pull requests are welcome on GitHub at https://github.com/gracenak/flatiron_game_jam_blackjack. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Code of Conduct
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Everyone interacting in the Shinking-Ships project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://www.contributor-covenant.org/).
