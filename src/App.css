@@ -114,6 +114,7 @@ div.card-front, .card-back {
 
 .HitCardsMap {
 display:inline-block;
+flex-direction: row;
 }
 
 div.blackjack-container h3 {
