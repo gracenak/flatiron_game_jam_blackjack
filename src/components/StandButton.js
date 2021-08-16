@@ -48,7 +48,7 @@ const StandButton = (props) => {
             if (playerHand[i] === "KING" || playerHand[i] === "QUEEN" || playerHand[i] === "JACK"){
                 total.push(10)
             } else if (playerHand[i] === "ACE"){
-                total.push(10)
+                total.push(11)
             } else {
                 total.push(parseInt(playerHand[i], 10))
             }
