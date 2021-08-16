@@ -26,7 +26,7 @@ The goal of blackjack is to beat the dealer's hand without going over 21. Face c
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/gracenak/flatiron_game_jam_blackjack-Ships. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/gracenak/flatiron_game_jam_blackjack. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
