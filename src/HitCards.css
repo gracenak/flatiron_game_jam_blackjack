@@ -1,11 +1,15 @@
 .HitCards {
-    position: relative;
-    margin-top: auto;
+    /* position: relative;
+    margin-top: auto; */
 
     display:inline-block; 
     width: 20%;
     
 
+}
+
+div.HitCardsMap img {
+    display: inline;
 }
 
 

@@ -108,3 +108,15 @@ div.card-front, .card-back {
   color: white;
   transform: rotateY(180deg);
 }
+
+.HitCardsMap {
+display:inline-block;
+}
+
+div.blackjack-container h3 {
+  color:yellow
+}
+
+
+
+

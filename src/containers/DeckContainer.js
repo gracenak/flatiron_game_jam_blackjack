@@ -17,7 +17,8 @@ class DeckContainer extends Component {
         cards: [],
         hitcards: [],
         dealerscard: [],
-        added: false
+        added: false,
+        reload: false
     }
 
     componentDidMount() {
@@ -41,9 +42,15 @@ class DeckContainer extends Component {
             let newCard = this.state.hitcards
             console.log(this.props.hitCard.cards)
             newCard.push(this.props.hitCard)
-            return <HitCard cards={this.state.hitcards} />
+            return <HitCard key={this.state.hitcards && this.state.hitcards.id} cards={this.state.hitcards} />
         }
     }
+
+    handleRefresh = () => {
+        window.location.reload();
+
+    }
+    
     renderHitButton = () => {
         return (
             <button onClick={() => this.handleClick()}> Hit </button>
@@ -52,7 +59,7 @@ class DeckContainer extends Component {
 
     renderRefreshButton = () => {
         return (
-            <button onClick={() => window.location.reload(false)}>Click to reload!</button>
+            <button onClick={() => this.handleRefresh()}>Click to reload!</button>
         )
     }
 
@@ -87,9 +94,10 @@ class DeckContainer extends Component {
                 {this.renderCurrentCardTotal()}
                 <h4>Dealer vs. {this.props.name}</h4>
 
+                <h3>Dealer Cards:</h3>
                 {this.handleLoadingDealer()}
 
-                
+                <h3>Player Cards:</h3>
                 {this.handleLoading()}
                 {this.handleHitCard()}
                 <StandButton
