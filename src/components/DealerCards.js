@@ -20,10 +20,10 @@ const DealerCards = (props) => {
         // </div>
 
         <div className="HitCardsMap" >
-            <img src={cardDown} alt="card-down" width="226px" height="314px" />
-            <ul key={props.dcards.code}>{props.dcards.value} of {props.dcards.suit}<br></br><img src={props.dcards.image} alt={props.dcards.code}/></ul>
-        </div>
 
+            <p key={props.dcards.code}>{props.dcards.value} of {props.dcards.suit}</p>
+            <ul key={props.dcards.code}><img src={props.dcards.image} alt={props.dcards.code}/><img src={cardDown} alt="card-down" width="226px" height="314px" /></ul>
+        </div>
 
 
     )
