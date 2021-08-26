@@ -28,6 +28,7 @@ class DeckContainer extends Component {
 
     handleClick = () => {
         this.props.fetchAnotherCard()
+        this.handleBust()
     }
 
     handleLoading = () => {
@@ -85,6 +86,9 @@ class DeckContainer extends Component {
             dealersCards.push(this.props.dealerCards.cards[0])
             return <DealerCards dcards={dealersCards[0]} />
         }
+    }
+
+    handleBust = () => {
 
     }
 
