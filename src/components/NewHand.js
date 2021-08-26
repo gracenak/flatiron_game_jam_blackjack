@@ -1,17 +1,14 @@
 import React from 'react';
 import { fetchCards } from '../actions/fetchCards';
 import { connect } from 'react-redux'
-import cardsArray from './cardsArray';
+// import cardsArray from './cardsArray';
+import { fetchDealerCards } from '../actions/fetchDealerCards';
 
 class NewHand extends React.Component {
 
-    state = {
-        cards: [],
-
-    }
-
     handleClick = () => {
         this.props.fetchCards()
+        this.props.fetchDealerCards()
     }
 
 
@@ -22,12 +19,4 @@ class NewHand extends React.Component {
     };
 }
 
-const mapStateToProps = state => {
-    return {
-        cards: state.cards
-
-    }
-
-}
-
-export default connect(mapStateToProps, { fetchCards })(NewHand);
+export default connect(null, { fetchCards, fetchDealerCards })(NewHand);
