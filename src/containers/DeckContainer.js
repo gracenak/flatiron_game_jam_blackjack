@@ -9,6 +9,7 @@ import StandButton from '../components/StandButton';
 import CurrentCardsTotal from '../components/CurrentCardsTotal';
 import DealerCards from '../components/DealerCards';
 import { sendCardInfo } from "../actions/sendCardInfo";
+import NewHand from '../components/NewHand';
 //import { current } from 'immer';
 
 
@@ -50,7 +51,7 @@ class DeckContainer extends Component {
         window.location.reload();
 
     }
-    
+
     renderHitButton = () => {
         return (
             <button onClick={() => this.handleClick()}> Hit </button>
@@ -105,6 +106,7 @@ class DeckContainer extends Component {
                     dealerCards={this.props.dealerCards}
                     hit={this.state.hitcards}
                 />
+                <NewHand />
                 {this.renderHitButton()}
                 {this.renderRefreshButton()}
             </div>
