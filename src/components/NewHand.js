@@ -1,4 +1,6 @@
 import React from 'react';
+import { fetchCards } from '../actions/fetchCards';
+import { connect } from 'react-redux'
 
 class NewHand extends React.Component {
 
@@ -9,4 +11,13 @@ class NewHand extends React.Component {
     };
 }
 
-export default NewHand;
+const mapStateToProps = state => {
+    return {
+        cards: state.cards,
+        hitCard: state.hitCard,
+        dealerCards: state.dealerCards
+    }
+
+}
+
+export default connect(mapStateToProps, { fetchCards })(NewHand);
