@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchCards } from '../actions/fetchCards';
 import { connect } from 'react-redux'
+import cardsArray from './cardsArray';
 
 class NewHand extends React.Component {
 
@@ -9,14 +10,10 @@ class NewHand extends React.Component {
 
     }
 
-    componentDidMount() {
-        this.props.fetchCards()
-
-    }
-
     handleClick = () => {
-        this.props.fetchCard()
+        this.props.fetchCards()
     }
+
 
     render() {
         return (
@@ -27,7 +24,7 @@ class NewHand extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        cards: state.cards,
+        cards: state.cards
 
     }
 
