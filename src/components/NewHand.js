@@ -1,11 +1,12 @@
 import React from 'react';
 
-const NewHand = () => {
-    return (
-        <div>
+class NewHand extends React.Component {
+
+    render() {
+        return (
             <button>New Hand</button>
-        </div>
-    );
+        )
+    };
 }
 
 export default NewHand;
