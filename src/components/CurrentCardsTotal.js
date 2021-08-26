@@ -6,8 +6,7 @@ import '../Cards.css'
 
 class CurrentCardsTotal  extends React.Component {
     handleCards(){
-        const entries =  this.props.cards
-        this.props.sendCardInfo(entries)
+        alert(":^)")
     }
 
 
