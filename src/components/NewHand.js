@@ -4,9 +4,23 @@ import { connect } from 'react-redux'
 
 class NewHand extends React.Component {
 
+    state = {
+        cards: [],
+
+    }
+
+    componentDidMount() {
+        this.props.fetchCards()
+
+    }
+
+    handleClick = () => {
+        this.props.fetchCard()
+    }
+
     render() {
         return (
-            <button>New Hand</button>
+            <button onClick={() => this.handleClick()}> New Hand </button>
         )
     };
 }
@@ -14,8 +28,7 @@ class NewHand extends React.Component {
 const mapStateToProps = state => {
     return {
         cards: state.cards,
-        hitCard: state.hitCard,
-        dealerCards: state.dealerCards
+
     }
 
 }
