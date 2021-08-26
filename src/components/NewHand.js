@@ -1,7 +1,6 @@
 import React from 'react';
 import { fetchCards } from '../actions/fetchCards';
-import { connect } from 'react-redux'
-// import cardsArray from './cardsArray';
+import { connect } from 'react-redux';
 import { fetchDealerCards } from '../actions/fetchDealerCards';
 
 class NewHand extends React.Component {
