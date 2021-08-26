@@ -65,20 +65,25 @@ const StandButton = (props) => {
             finalScore += total[i]
         }
         if (finalScore > 21 && aceAt.length > 0){
-            total = []
-            finalScore = 0
-            for (let i = 0; finalTotal.length > i; i++){
-                if (finalTotal[i] === "KING" || finalTotal[i] === "QUEEN" || finalTotal[i] === "JACK"){
-                    total.push(10)
-                } else if (finalTotal[i] === "ACE"){
-                    total.push(1)
-                } else {
-                    total.push(parseInt(finalTotal[i], 10))
-                }
+            finalScore = playerHighTotal(finalTotal)
+        }
+        return finalScore
+     }
+
+     let playerHighTotal = (finalTotal) => {
+        let total = []
+        let finalScore = 0
+        for (let i = 0; finalTotal.length > i; i++){
+            if (finalTotal[i] === "KING" || finalTotal[i] === "QUEEN" || finalTotal[i] === "JACK"){
+                total.push(10)
+            } else if (finalTotal[i] === "ACE"){
+                total.push(1)
+            } else {
+                total.push(parseInt(finalTotal[i], 10))
             }
-            for (let i = 0; total.length > i; i++){
-                finalScore += total[i]
-            }
+        }
+        for (let i = 0; total.length > i; i++){
+            finalScore += total[i]
         }
         return finalScore
      }
