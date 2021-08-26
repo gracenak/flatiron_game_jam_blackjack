@@ -108,6 +108,7 @@ class DeckContainer extends Component {
                 />
                 <NewHand
                     cards={this.props.cards}
+                    dealerCards={this.props.dealerCards}
                 />
                 {this.renderHitButton()}
                 {this.renderRefreshButton()}
