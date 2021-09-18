@@ -3,6 +3,13 @@ import '../HitCards.css'
 
 
 class HitCard extends React.Component {
+    playerTotal = () => {
+        alert("Your Current Total is " + this.bustCount())
+        if(this.bustCount() > 21){
+            alert("They Player Has Busted. Game Over")
+        }
+    }
+
     bustCount = () => {
         let cards = this.props.givenCards
         let hand = []
@@ -54,7 +61,7 @@ class HitCard extends React.Component {
                 currentTotal += total[i]
             }
         }
-        alert("Current Total is " + currentTotal + "!")
+        return currentTotal
     }
 
     render(){
@@ -66,7 +73,7 @@ class HitCard extends React.Component {
                             <ul key={cards.code}>  {cards.value} of {cards.suit} <br></br> <img src={cards.image} alt={cards.code}/></ul>
                         )}
                     </div>)}
-                {this.bustCount()}
+                {this.playerTotal()}
             </div>
         )
     }
