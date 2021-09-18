@@ -23,7 +23,15 @@ class HitCard extends React.Component {
                 total.push(parseInt(hand[i], 10))
             }
         }
-        debugger
+        currentTotal = total[0] + total[1]
+        total.shift()
+        total.shift()
+        total.shift()
+        total.shift()
+        for(let i = 0; total.length > i; i++){
+            currentTotal = currentTotal + total[i]
+        }
+        alert("Current Total is " + currentTotal + "!")
     }
 
     render(){
@@ -35,7 +43,7 @@ class HitCard extends React.Component {
                             <ul key={cards.code}>  {cards.value} of {cards.suit} <br></br> <img src={cards.image} alt={cards.code}/></ul>
                         )}
                     </div>)}
-                    <button onClick={() => this.bustCount()}>Busted?</button>
+                {this.bustCount()}
             </div>
         )
     }
