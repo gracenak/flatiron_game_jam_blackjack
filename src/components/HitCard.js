@@ -8,6 +8,7 @@ class HitCard extends React.Component {
         let hand = []
         let total = []
         let currentTotal = 0
+        let aceAt = []
         //debugger
         cards.map(card =>
             card.cards.map(card => 
@@ -19,6 +20,7 @@ class HitCard extends React.Component {
                 total.push(10)
             } else if (hand[i] === "ACE"){
                 total.push(11)
+                aceAt.push(i)
             } else {
                 total.push(parseInt(hand[i], 10))
             }
@@ -29,7 +31,28 @@ class HitCard extends React.Component {
         total.shift()
         total.shift()
         for(let i = 0; total.length > i; i++){
-            currentTotal = currentTotal + total[i]
+            currentTotal += total[i]
+        }
+        if (currentTotal > 21 && aceAt.length > 0){
+                total = []
+                currentTotal = 0
+                for (let i = 0; hand.length > i; i++){
+                    if (hand[i] === "KING" || hand[i] === "QUEEN" || hand[i] === "JACK"){
+                        total.push(10)
+                    } else if (hand[i] === "ACE"){
+                        total.push(1)
+                    } else {
+                        total.push(parseInt(hand[i], 10))
+                    }
+                }
+            currentTotal = total[0] + total[1]
+            total.shift()
+            total.shift()
+            total.shift()
+            total.shift()
+            for (let i = 0; total.length > i; i++){
+                currentTotal += total[i]
+            }
         }
         alert("Current Total is " + currentTotal + "!")
     }
