@@ -3,8 +3,8 @@ import '../DealerCards.css';
 import cardDown from '../components/images/cardDown.png';
 
 const DealerCards = (props) => {
-
-
+    let dealersCards = props.dcards.value
+    let dealerCardsArray = []
     return (
         // <div className="HitCardsMap" >
         //     <div className="card-flip">
@@ -19,11 +19,13 @@ const DealerCards = (props) => {
         //     </div>
         // </div>
 
-        <div className="HitCardsMap" >
 
-            <p key={props.dcards.code}>{props.dcards.value} of {props.dcards.suit}</p>
-            <ul key={props.dcards.code}><img src={cardDown} alt="card-down" width="226px" height="314px" /><img src={props.dcards.image} alt={props.dcards.code}/></ul>
-        </div>
+
+        <div div className="DealerCardsMap" >
+
+            <p key={props.dcards.code}>{dealersCards} of {props.dcards.suit}</p>
+            <ul key={props.dcards.code}><img src={cardDown} alt="card-down" width="226px" height="314px" /><img src={props.dcards.image} alt={props.dcards.code} /></ul>
+        </div >
 
 
     )
