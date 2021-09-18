@@ -6,7 +6,7 @@ import '../Cards.css'
 
 class CurrentCardsTotal extends React.Component {
     handleCards() {
-        alert(":^) REEEEEEE")
+        alert(":^)")
     }
 
 
