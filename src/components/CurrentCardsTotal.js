@@ -4,16 +4,16 @@ import { connect } from 'react-redux'
 import '../Cards.css'
 
 
-class CurrentCardsTotal  extends React.Component {
-    handleCards(){
-        alert(":^)")
+class CurrentCardsTotal extends React.Component {
+    handleCards() {
+        alert(":^) REEEEEEE")
     }
 
 
-    render(){
+    render() {
         return (<div>
             <button onClick={() => this.handleCards()}>":^)"</button>
-            </div>
+        </div>
         )
     }
 }
@@ -21,9 +21,9 @@ class CurrentCardsTotal  extends React.Component {
 const mapDispatchToProps = dispatch => {
     return {
         sendCardInfo: (entries) => {
-        dispatch(sendCardInfo(entries))
-      }
+            dispatch(sendCardInfo(entries))
+        }
     };
-  };
-  
-  export default connect(null, mapDispatchToProps)(CurrentCardsTotal );
+};
+
+export default connect(null, mapDispatchToProps)(CurrentCardsTotal);
