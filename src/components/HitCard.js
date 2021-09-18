@@ -3,6 +3,11 @@ import '../HitCards.css'
 
 
 class HitCard extends React.Component {
+    bustCount = () => {
+        
+    }
+
+
     render(){
         return (
             <div className="HitCardsMap">
