@@ -83,7 +83,7 @@ class DeckContainer extends Component {
         let dealersCards = this.state.dealerscard
         if (this.props.dealerCards.length !== 0) {
             console.log(this.props.dealerCards.cards)
-            dealersCards.push(this.props.dealerCards.cards[0])
+            dealersCards.unshift(this.props.dealerCards.cards[0])
             return <DealerCards dcards={dealersCards[0]} />
         }
 
