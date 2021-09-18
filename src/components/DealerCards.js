@@ -1,5 +1,5 @@
 import React from 'react';
-import '../DealerCards.css';
+import '../dealerCardsMap.css';
 import cardDown from '../components/images/cardDown.png';
 
 const DealerCards = (props) => {
@@ -21,7 +21,7 @@ const DealerCards = (props) => {
 
 
 
-        <div div className="DealerCardsMap" >
+        <div div className="dealerCardsMap" >
 
             {/* <p key={props.dcards.code}>{props.dcards.value} of {props.dcards.suit}</p> */}
             <ul key={props.dcards.code}><img src={cardDown} alt="card-down" width="226px" height="314px" /><img src={props.dcards.image} alt={props.dcards.code} /></ul>
