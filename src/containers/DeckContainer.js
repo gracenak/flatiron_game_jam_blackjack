@@ -43,7 +43,7 @@ class DeckContainer extends Component {
             let newCard = this.state.hitcards
             console.log(this.props.hitCard.cards)
             newCard.push(this.props.hitCard)
-            return <HitCard key={this.state.hitcards && this.state.hitcards.id} cards={this.state.hitcards} />
+            return <HitCard key={this.state.hitcards && this.state.hitcards.id} hitCards={this.state.hitcards} givenCards={this.state.cards} />
         }
     }
 
